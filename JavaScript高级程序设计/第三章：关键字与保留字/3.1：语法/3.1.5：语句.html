@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语句</title>
+    <script>
+        function test(){
+            "use strict"// 
+
+            // 每条语句结束必须以分号结尾，在某些情况下有助于提高性能，
+            // 防止开发者通过删除空行来压缩代码时导致语法错误
+            // let sum = a + b // 不加分号也有效，不推荐
+            // let sum = a + b;// 加分号有效，强烈推荐
+
+            // 多条语句合并到一个代码跨中，比如输出1-10
+            // 不合并的话：需要通过document.write(1)、document.write(2)...
+            // 合并后会大量减少代码容量：防止代码冗余
+            // 例：
+            for (var i = 1; i <= 10; i++) {
+                document.write(i + "<br>");
+            }
+            // 减少了代码重复
+
+            // if语句的两种写法：
+            // 1.
+            if (test)// 在严格模式下，这种写法依然有效————不支持，容易出现语法错误
+                console.log(test);
+            // 2.
+            if (test) {
+                console.log(test);
+            }
+        }
+        test();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

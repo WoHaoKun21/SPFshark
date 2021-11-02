@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+                // 一、const和let申明基本相同，但是const申明时必须初始化变量，且尝试修改const申明的变量会导致运行时错误
+        // const age=26;
+        // age=36;// 当尝试修改赋值的会导致运行错误：此处报错
+
+                // 二、const也不允许重复申明
+        // const name="shi";
+        // const name="peng";// 不允许重复声明：此处报错
+
+                // 三、const声明的作用域也是块
+        // const name ="sake";
+        // if(true){
+        //     const name="match";// 块级作用域，if语句外无法使用
+        // }
+        // console.log(name);
+
+                // 四、const变量引用的是一个对象，name改变内部属性不会违反const限制
+        // const preson={};// 将对象赋值给变量
+        // preson.name="石鹏飞";
+        // preson.age=21;
+        // preson.fun=function(){
+        //     alert("坚持住");
+        // }
+        // console.log(preson);// 不会报错
+
+                // const声明一个不会被修改的
+        // let i=0;
+        // for(const j=7;i<5;++i){
+        //     console.log(j);// 一直输出7；j未发生变化
+        // }
+        // for(const key in {a:1,b:2}){
+        //     console.log(key);
+        // }
+        // for(const value of [1,2,3,4,5]){
+        //     console.log(value);
+        // }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

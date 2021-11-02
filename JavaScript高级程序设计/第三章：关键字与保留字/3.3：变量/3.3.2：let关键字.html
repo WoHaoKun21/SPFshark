@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // // let变量不会进行变量提升(预编译阶段)
+        // console.log(name);
+        // var name="Matt";// 返回的是undefined
+        // console.log(age);
+        // let age;
+
+        // var声明的变量可以作为window对象的属性，let却不能
+        var x="属性";
+        console.log(window.x);// 返回“属性”
+        let y="let";
+        console.log(window.y);// 返回undefined
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean类型</title>
+    <script>
+        // Boolean值在js中使用用相当频繁，有true和false两个值
+        let fond=true;
+        let lost=false;
+        // alert(fond>lost);// 给变量赋值的是字面量，比较的是首字母顺序
+
+                        // Boolean()——转型函数：可以用于任意类型的数据上调用，始终返回一个布尔值
+        let message="hello word";
+        let messageASBoolean=Boolean(message);// 字符串(hello word)，被转为布尔值并被保存在变量中
+        // alert(message);
+        // alert(messageASBoolean);
+        if(message){// 这里的字符串被自动转型为boolean类型了
+            alert("条件正确，被输出");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

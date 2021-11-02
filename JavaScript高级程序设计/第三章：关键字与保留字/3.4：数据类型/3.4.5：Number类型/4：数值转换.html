@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数值转换</title>
+    <script>
+                            // 数值转换
+        // 1、Number()；2、parseInt()；3、parseFloat()
+        // Number()：是转型函数，可用于任何数据类型；
+        // parseInt()/parseFloat()：这两个函数主要用于将字符串转换为数值。
+        let obj={name:"石鹏飞",age:21,sex:"男"};
+        let objzh=obj.valueOf;// 使用Number转换成数值型返回的是NaN
+        let num=objzh.toString();
+        console.log(Number(num));// 返回的是NaN
+
+        // Number()方法转换数值的结果
+        console.log("Number()方法转换数值型");
+        console.log("文字字符串转为数值："+Number("Hellow word"));// NaN
+        console.log("空字符串转数值型："+Number(""));// 0
+        console.log("字符串包裹的数字："+Number("001102"));// 1102
+        console.log("boolean数据类型转数值型："+Number(true));// true：1；false：0
+
+        // parseInt()方法更适用于字符串转换
+        console.log("parseInt()方法转换数值型");
+        console.log("将字符串内的数值“12ss6”进行转换出来："+parseInt("12ss6"));
+        console.log("空字符串："+parseInt(""));
+        console.log("带0x的解释为16进制整数："+parseInt("0xA"));// 10-解释为十六进制数值
+        console.log("带小数点的数值23.5："+parseInt("23.5"));
+        console.log("字符串数值："+parseInt("56"));// 解释为十进制数值
+        console.log("“0xf”的数值转换"+parseInt("0xf"));// 15-解释为十六进制数值
+                                            // 0x：0-9+a-f
+        console.log("指定底数的数值转化："+parseInt("0xaf",16));// 175-按照十六进制进行转换(af前面的0x也可以不用加)，第二个参数代表几进制
+
+        // parseFloat()方法更适用于字符串转换——只检索一次小数点，第二次出现就无效了
+        console.log("parseFloat()方法转换数值型");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
