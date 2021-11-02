@@ -33,9 +33,15 @@
                                             // 0x：0-9+a-f
         console.log("指定底数的数值转化："+parseInt("0xaf",16));// 175-按照十六进制进行转换(af前面的0x也可以不用加)，第二个参数代表几进制
 
-        // parseFloat()方法更适用于字符串转换——只检索一次小数点，第二次出现就无效了
+        // parseFloat()方法更适用于字符串转换——只检索一次小数点，第二次出现就无效了,并且始终忽略字符串开头的0
+        //              只能解析十进制数值，不能指定底数
         console.log("parseFloat()方法转换数值型");
-
+        console.log("“25bd52”只解析数值："+parseFloat("25bd52"));// “25bd52”返回的是NaN
+        console.log("0xA转换成浮点数："+parseFloat("0xA"));// 返回0
+        console.log("将字符串“22.5”转换成数值型："+parseFloat("22.5"));// 返回22.5
+        console.log("将“22.5.6”转换成浮点型："+parseFloat("22.5.6"));// 返回22.5，因为，parseFloat只识别第一个小数点
+        console.log("将“056.2”转换成浮点型："+parseFloat("056.2"));// 返回56.2，一位parseFloat始终忽略字符串开头的0
+        console.log("“3.125e7”转换成浮点型："+parseFloat("3.125e7"));// 返回的是31250000,3.125*10的7次方
     </script>
 </head>
 <body>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转换为字符串</title>
+    <script>
+        // 将其他得值转换为字符串有两种方式：
+        // 1、toString()方法  ——可用于数值、布尔值、对象和字符串值
+        // 例：
+        let age = 21;
+        let stringAge = age.toString();// 将数字转换为字符串："21"
+        console.log("字符串21："+stringAge);
+        let boolean = true;
+        let stringBoolean = boolean.toString();// 将布尔型转换为字符串型："true"
+        console.log("字符串布尔类型："+stringBoolean);
+        // toString()方法在对数值调用时可加参数来表示得到的是二/八/十/十六进制
+        // 例：
+        let num = 10;
+        console.log(num.toString());
+        console.log(num.toString(2));
+        console.log(num.toString(8));
+        console.log(num.toString(10));
+        console.log(num.toString(16));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
