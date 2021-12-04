@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串插件</title>
+    <script>
+                                // 字符串插件
+        //     字符串插件：可以在一个连续定义中插入一个或多个值，在定义的时候立即求值并转换为字符串实例，
+        // 任何插入的变量也会从他们最接近的作用域中取值！
+        // 说明：字符串插值通过在${}中使用一个JavaScript表达式来实现
+        // 例：
+        let value = "笑死";
+        let value2=5;
+        let plugin=value+value2+"的平方 = "+value2*value2;// 平常的写法
+        let plugin2=`${value}${value2}的平方 = ${value2*value2}`;// 字符串插件的写法
+        console.log(plugin);
+        console.log(plugin2);
+
+        // 也可以插入之前得值：
+        let val = "";
+        function append(){
+            val=`${val}abc`;
+            console.log(val);
+        }
+        append()
+        append()
+        append()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

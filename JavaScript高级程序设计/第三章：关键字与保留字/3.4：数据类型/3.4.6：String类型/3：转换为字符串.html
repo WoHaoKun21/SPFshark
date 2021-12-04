@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +12,11 @@
         // 例：
         let age = 21;
         let stringAge = age.toString();// 将数字转换为字符串："21"
-        console.log("字符串21："+stringAge);
+        console.log("字符串21：" + stringAge);
         let boolean = true;
         let stringBoolean = boolean.toString();// 将布尔型转换为字符串型："true"
-        console.log("字符串布尔类型："+stringBoolean);
+        console.log("字符串布尔类型：" + stringBoolean);
+
         // toString()方法在对数值调用时可加参数来表示得到的是二/八/十/十六进制
         // 例：
         let num = 10;
@@ -24,9 +26,25 @@
         console.log(num.toString(10));
         console.log(num.toString(16));
 
+        // 当你不确定一个值是不是null或undefined，可以使用String()转型函数，它始终会返回表示相应
+        // 类型值的字符串。String()函数遵循如下规则：
+        // ①：如果值有toString()方法，则调用该方法(不传参数)并返回结果；
+        // ②：如果值是null，返回"null"；
+        // ③：如果值是undefined，返回"undefined"。
+        // 例：
+        let value1 = 10;
+        let value2 = true;
+        let value3 = null;
+        let value4;
+        console.log("当变量的值为number类型时：10；", String(value1));
+        console.log("当变量的值为Boolean类型时：true/false；", String(value2));
+        console.log("当变量的值为null时：null；", String(value3));
+        console.log("当变量的值为undefined：undefined；", String(value4));
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
