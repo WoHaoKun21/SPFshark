@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板字面量标签函数</title>
+    <script>
+        // 模板字面量也支持定义标签函数，通过标签函数可以自定义插值行为。
+        // 一、标签函数会接受被插值几号分割的模板和对每个表达式求值的结果。
+        // 例：
+        let a = 6;
+        let b = 9;
+
+        function simpleTag(strings, aValExpression, bValExpression, sumExpression) {
+            // 对于这个标签函数的第一个参数,总是接受除插值以外的字符,且是一个数组
+            // 如果传过来的是：`${a}`，第一个参数返回的是：["",""]；
+            // 如果传过来的是：`ss${a}`，第一个参数返回的是：["ss",""]；
+            // 如果传过来的是：`ss${a}22`，第一个参数返回的是：["ss","22"]
+            console.log(strings); // 返回的是一个数组：["","+","=",""]
+            console.log(aValExpression); // 返回的是：6
+            console.log(bValExpression); // 返回的是：9
+            console.log(sumExpression); // 返回的是： 15
+            return "foobar";
+        }
+        let untaggedResult = `${a}+${b}=${a+b}`;
+        let taggedResult = simpleTag `${a}+${b}=${a+b}`;
+        console.log(untaggedResult);
+        console.log(taggedResult);
+        console.log("-----------------------------------");
+
+        // 二、如果表达式参数的数量是可变的，所以应该使用剩余操作符(rest operator)将它们收集到一个数组中
+        // 例：
+        function simpleTag2(strings, ...expressions) { // 就是民哥上课讲的不定参数
+            // 使用不定参数，获取多个形参，并且存储到数组中，在遍历出来
+            console.log(strings);
+            console.log(expressions);
+            // for(let value of expressions){
+            //     console.log(value);
+            // }
+            expressions.map(value => console.log(value)); // 因为不定参数存储的是数组，所以也可以使用map进行遍历
+            return `foobar`;
+        }
+        let taggedResult2 = simpleTag2 `${a}+${b}=${a+b}`;
+        console.log(taggedResult2);
+        console.log("-----------------------------------");
+
+        // 三、对于有n个插值的模板字面量，传给标签函数的表达式参数的个数始终是n，而传给标签函数的第一个参数所包含的
+        // 字符串个数则始终是n+1。
+        // 如果想把这些字符串和表达式求值的结果拼接起来作为默认返回的字符串，可以这样：
+        let n1 = 6;
+        let n2 = 9;
+
+        function zipTag(strings, ...expressions) {
+            console.log(strings,strings[0]);
+            console.log(expressions);
+            return strings[0]+expressions.map((v,i)=>{
+                // console.log(v,i);
+                console.log(`${v}${strings[i+1]}`);
+                `${v}${strings[i+1]}`
+            }).join('');
+        }
+        let untaggedResult3 =    `${n1}+${n2}=${n1+n2}`;
+        let taggedResult3 = zipTag`${n1}+${n2}=${n1+n2}`;
+        console.log(untaggedResult3);
+        console.log(taggedResult3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

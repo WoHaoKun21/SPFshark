@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原始字符串</title>
+    <script>
+        // 原始字符串
+        // 使用模板字面量(模板字符串)也可以直接获取原始的模板字面量内容(如换行符或Unicode字符)，而不是被转换后的字符表示
+        // Unicode示例：\u00A9；是版权符号
+        console.log(`\u00A9`); // @符号
+        console.log(String.raw `\u00A9`); // “\u00A9”
+        // 换行符：
+        console.log(`first line\nsecond line`) // 打印出来的是两行
+        console.log(`-----------------------------------------`);
+
+        function printRaw(strings) {
+            console.log(`Actual characters:`);
+            for (let string of strings) {
+                console.log(string);
+            }
+            console.log(`Escaped characters:`);
+            for (let rawString of strings.raw) {
+                console.log(rawString);
+            }
+        }
+        printRaw`\u00A9${`and`}\n`;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
